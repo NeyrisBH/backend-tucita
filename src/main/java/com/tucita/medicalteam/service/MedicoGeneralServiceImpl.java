@@ -42,9 +42,10 @@ public class MedicoGeneralServiceImpl implements MedicoGeneralService {
 		Optional<MedicoGeneral> medicoAEliminar = repositorio.findById(id);
 		if (medicoAEliminar.isPresent()) {
 			repositorio.delete(medicoAEliminar.get());
-			return "El medico fue eliminardo con exito!";
+			return "Registro eliminado correctamente";
+		} else {
+			return "Registro no encontrado, no se puede eliminar";
 		}
-		return "No se puede eliminar el medico, ID no encontrada";
 	}
 
 	@Override

@@ -66,11 +66,11 @@ public class PacienteController {
 		Optional<Paciente> paciente = servicio.consultarPaciente(id, null);
 		if (paciente.isPresent()) {
 			servicio.eliminarPaciente(id);
-			return ResponseEntity.status(HttpStatus.OK).body(servicio.consultarLista());
+			return new ResponseEntity<>(HttpStatus.OK);
 		} else {
 
 		}
-		return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{Registro no encontrado}");
+		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
 
 

@@ -64,8 +64,12 @@ public class OrdenesRemisionesController {
 	}
 	@DeleteMapping("/d/{id}")
 	public ResponseEntity<?> eliminarOrdenPorId(@PathVariable Long id){
-		servicio.eliminarOrden(id);
-		return ResponseEntity.status(HttpStatus.OK).body(servicio.consultarLista());
+		Optional<OrdenesRemisiones> orden = servicio.consultarOrden(id, null);
+		if (orden.isPresent()) {
+			return ResponseEntity.status(HttpStatus.OK).body(servicio.eliminarOrden(id));
+		}
+ 		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		
 	}
 	
 	@GetMapping("/m/{idMedicoGeneral}")

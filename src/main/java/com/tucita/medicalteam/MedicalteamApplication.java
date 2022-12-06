@@ -37,6 +37,7 @@ public class MedicalteamApplication {
             .antMatchers(HttpMethod.POST, "/api/token").permitAll()
             .antMatchers(HttpMethod.POST, "/api/usuarios").permitAll()
             .antMatchers(HttpMethod.GET, "/api/ordenes").hasAuthority("Admin")
+            .antMatchers(HttpMethod.GET, "/api/ordenes").hasAuthority("Paciente")
             .antMatchers(HttpMethod.GET, "/api/ordenes/**").hasAuthority("User")
             .anyRequest().authenticated()
             .and().csrf().disable().cors().configurationSource(request -> configuration);

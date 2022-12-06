@@ -63,8 +63,12 @@ public class MedicoGeneralController {
 	}
 	@DeleteMapping("/d/{id}")
 	public ResponseEntity<?> eliminarMedicoPorId(@PathVariable Long id){
-		servicio.eliminarMedicoGeneral(id);
-		return ResponseEntity.status(HttpStatus.OK).body(servicio.consultarLista());
+		Optional<MedicoGeneral> medico = servicio.consultarMedicoGeneral(id, null);
+		if (medico.isPresent()) {
+			servicio.eliminarMedicoGeneral(id);
+			return new ResponseEntity<>(HttpStatus.OK);
+		}
+		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
 	
 	@GetMapping("/a/{areaMedico}")
