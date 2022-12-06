@@ -16,11 +16,13 @@ public class MedicoGeneral {
 	private Long telefonoMedico;
 	private String areaMedico;
 	private String remision;
-	private String usuarioMedico;
-	private String contraseñaMedico;
 	
+	public MedicoGeneral() {
+		super();
+	}
+
 	public MedicoGeneral(Long id, String nombreMedico, String apellidoPaternoMedico, String apellidoMaternoMedico,
-			Long telefonoMedico, String areaMedico, String remision, String usuarioMedico, String contraseñaMedico) {
+			Long telefonoMedico, String areaMedico, String remision) {
 		super();
 		this.id = id;
 		this.nombreMedico = nombreMedico;
@@ -29,12 +31,6 @@ public class MedicoGeneral {
 		this.telefonoMedico = telefonoMedico;
 		this.areaMedico = areaMedico;
 		this.remision = remision;
-		this.usuarioMedico = usuarioMedico;
-		this.contraseñaMedico = contraseñaMedico;
-	}
-
-	public MedicoGeneral() {
-		super();
 	}
 
 	public Long getId() {
@@ -93,26 +89,10 @@ public class MedicoGeneral {
 		this.remision = remision;
 	}
 
-	public String getUsuarioMedico() {
-		return usuarioMedico;
-	}
-
-	public void setUsuarioMedico(String usuarioMedico) {
-		this.usuarioMedico = usuarioMedico;
-	}
-
-	public String getContraseñaMedico() {
-		return contraseñaMedico;
-	}
-
-	public void setContraseñaMedico(String contraseñaMedico) {
-		this.contraseñaMedico = contraseñaMedico;
-	}
-
 	@Override
 	public int hashCode() {
-		return Objects.hash(apellidoMaternoMedico, apellidoPaternoMedico, areaMedico, contraseñaMedico, id,
-				nombreMedico, remision, telefonoMedico, usuarioMedico);
+		return Objects.hash(apellidoMaternoMedico, apellidoPaternoMedico, areaMedico, id, nombreMedico, remision,
+				telefonoMedico);
 	}
 
 	@Override
@@ -126,23 +106,15 @@ public class MedicoGeneral {
 		MedicoGeneral other = (MedicoGeneral) obj;
 		return Objects.equals(apellidoMaternoMedico, other.apellidoMaternoMedico)
 				&& Objects.equals(apellidoPaternoMedico, other.apellidoPaternoMedico)
-				&& Objects.equals(areaMedico, other.areaMedico)
-				&& Objects.equals(contraseñaMedico, other.contraseñaMedico) && Objects.equals(id, other.id)
+				&& Objects.equals(areaMedico, other.areaMedico) && Objects.equals(id, other.id)
 				&& Objects.equals(nombreMedico, other.nombreMedico) && Objects.equals(remision, other.remision)
-				&& Objects.equals(telefonoMedico, other.telefonoMedico)
-				&& Objects.equals(usuarioMedico, other.usuarioMedico);
+				&& Objects.equals(telefonoMedico, other.telefonoMedico);
 	}
 
 	@Override
 	public String toString() {
 		return "MedicoGeneral [id=" + id + ", nombreMedico=" + nombreMedico + ", apellidoPaternoMedico="
 				+ apellidoPaternoMedico + ", apellidoMaternoMedico=" + apellidoMaternoMedico + ", telefonoMedico="
-				+ telefonoMedico + ", areaMedico=" + areaMedico + ", remision=" + remision + ", usuarioMedico="
-				+ usuarioMedico + ", contraseñaMedico=" + contraseñaMedico + "]";
+				+ telefonoMedico + ", areaMedico=" + areaMedico + ", remision=" + remision + "]";
 	}
-	
-	
-	
-	
-
 }

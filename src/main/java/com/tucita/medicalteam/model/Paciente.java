@@ -20,13 +20,16 @@ public class Paciente {
 	private String ciudadResidenciaPaciente;
 	private String direccionResidenciaPaciente;
 	private Long codigoAfiliacionPaciente;
-	private String usuarioPaciente;
-	private String contraseñaPaciente;
 	
+	
+	
+	public Paciente() {
+		super();
+	}
+
 	public Paciente(Long id, String nombrePaciente, String apellidoPaternoPaciente, String apellidoMaternoPaciente,
 			Long telefonoPaciente, String emailPaciente, String fechaNacimientoPaciente, String generoPaciente,
-			String ciudadResidenciaPaciente, String direccionResidenciaPaciente, Long codigoAfiliacionPaciente,
-			String usuarioPaciente, String contraseñaPaciente) {
+			String ciudadResidenciaPaciente, String direccionResidenciaPaciente, Long codigoAfiliacionPaciente) {
 		super();
 		this.id = id;
 		this.nombrePaciente = nombrePaciente;
@@ -39,12 +42,6 @@ public class Paciente {
 		this.ciudadResidenciaPaciente = ciudadResidenciaPaciente;
 		this.direccionResidenciaPaciente = direccionResidenciaPaciente;
 		this.codigoAfiliacionPaciente = codigoAfiliacionPaciente;
-		this.usuarioPaciente = usuarioPaciente;
-		this.contraseñaPaciente = contraseñaPaciente;
-	}
-
-	public Paciente() {
-		super();
 	}
 
 	public Long getId() {
@@ -135,27 +132,11 @@ public class Paciente {
 		this.codigoAfiliacionPaciente = codigoAfiliacionPaciente;
 	}
 
-	public String getUsuarioPaciente() {
-		return usuarioPaciente;
-	}
-
-	public void setUsuarioPaciente(String usuarioPaciente) {
-		this.usuarioPaciente = usuarioPaciente;
-	}
-
-	public String getContraseñaPaciente() {
-		return contraseñaPaciente;
-	}
-
-	public void setContraseñaPaciente(String contraseñaPaciente) {
-		this.contraseñaPaciente = contraseñaPaciente;
-	}
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(apellidoMaternoPaciente, apellidoPaternoPaciente, ciudadResidenciaPaciente,
-				codigoAfiliacionPaciente, contraseñaPaciente, direccionResidenciaPaciente, emailPaciente,
-				fechaNacimientoPaciente, generoPaciente, id, nombrePaciente, telefonoPaciente, usuarioPaciente);
+				codigoAfiliacionPaciente, direccionResidenciaPaciente, emailPaciente, fechaNacimientoPaciente,
+				generoPaciente, id, nombrePaciente, telefonoPaciente);
 	}
 
 	@Override
@@ -171,14 +152,12 @@ public class Paciente {
 				&& Objects.equals(apellidoPaternoPaciente, other.apellidoPaternoPaciente)
 				&& Objects.equals(ciudadResidenciaPaciente, other.ciudadResidenciaPaciente)
 				&& Objects.equals(codigoAfiliacionPaciente, other.codigoAfiliacionPaciente)
-				&& Objects.equals(contraseñaPaciente, other.contraseñaPaciente)
 				&& Objects.equals(direccionResidenciaPaciente, other.direccionResidenciaPaciente)
 				&& Objects.equals(emailPaciente, other.emailPaciente)
 				&& Objects.equals(fechaNacimientoPaciente, other.fechaNacimientoPaciente)
 				&& Objects.equals(generoPaciente, other.generoPaciente) && Objects.equals(id, other.id)
 				&& Objects.equals(nombrePaciente, other.nombrePaciente)
-				&& Objects.equals(telefonoPaciente, other.telefonoPaciente)
-				&& Objects.equals(usuarioPaciente, other.usuarioPaciente);
+				&& Objects.equals(telefonoPaciente, other.telefonoPaciente);
 	}
 
 	@Override
@@ -188,11 +167,6 @@ public class Paciente {
 				+ ", telefonoPaciente=" + telefonoPaciente + ", emailPaciente=" + emailPaciente
 				+ ", fechaNacimientoPaciente=" + fechaNacimientoPaciente + ", generoPaciente=" + generoPaciente
 				+ ", ciudadResidenciaPaciente=" + ciudadResidenciaPaciente + ", direccionResidenciaPaciente="
-				+ direccionResidenciaPaciente + ", codigoAfiliacionPaciente=" + codigoAfiliacionPaciente
-				+ ", usuarioPaciente=" + usuarioPaciente + ", contraseñaPaciente=" + contraseñaPaciente + "]";
+				+ direccionResidenciaPaciente + ", codigoAfiliacionPaciente=" + codigoAfiliacionPaciente + "]";
 	}
-	
-	
-	
-
 }
