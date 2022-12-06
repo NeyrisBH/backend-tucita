@@ -17,7 +17,7 @@ public class JwtUtil {
 	
 	public static String crearToken(String usuario, String rol) {
 		List<GrantedAuthority> grantedAuthories = AuthorityUtils
-				.commaSeparatedStringToAuthorityList("SCOPED_"+rol);
+				.commaSeparatedStringToAuthorityList(rol);
 		String jwt = Jwts.builder()
 				.setId("jwt"+usuario)
 				.claim("usuario", usuario)
