@@ -47,12 +47,12 @@ public class UsuarioController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(servicio.crear(usuario));
 	}
 
-	@PutMapping("/{usaurio}")
-	public ResponseEntity<?> actualizarTarea(@RequestBody Usuario usuario, @PathVariable String user) {
-		Optional<Usuario> usuarios = servicio.consultarUsuario(user);
+	@PutMapping("/{usuario}")
+	public ResponseEntity<?> actualizarTarea(@RequestBody Usuario user, @PathVariable String usuario) {
+		Optional<Usuario> usuarios = servicio.consultarUsuario(usuario);
 		if (usuarios.isPresent()) {
-			if (usuario.getUsuario().equals(user)) {
-				return ResponseEntity.status(HttpStatus.OK).body(servicio.actualizar(usuario));
+			if (user.getUsuario().equals(usuario)) {
+				return ResponseEntity.status(HttpStatus.OK).body(servicio.actualizar(user));
 			} else {
 				JSONObject mensajeErrorPorId = new JSONObject();
 				mensajeErrorPorId.put("Mensaje", "El usuario no corresponde");

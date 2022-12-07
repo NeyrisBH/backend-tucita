@@ -2,19 +2,11 @@ package com.tucita.medicalteam.controller;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-
-import javax.servlet.FilterChain;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties.Jwt;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,13 +17,11 @@ import com.tucita.medicalteam.model.Usuario;
 import com.tucita.medicalteam.service.AuthService;
 import com.tucita.medicalteam.service.UsuarioService;
 import com.tucita.medicalteam.util.JwtUtil;
-
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.UnsupportedJwtException;
 
-import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/api/token")
